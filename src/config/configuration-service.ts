@@ -1,55 +1,56 @@
 import fs from "fs";
+import LogService from '../logging/log-service'
 
-class Configuration {
-    private static instance: Configuration;
+class ConfigurationService {
+    private static instance: ConfigurationService;
     private static configFileName = 'config.json'
     private twitchBotUsername?: string;
     private twitchBotToken?: string;
     private twitchChannelName?: string;
 
     constructor() {
-        console.log('Created new instance of Configuration');
+        LogService.log('Created new instance of ConfigurationService');
     }
 
     public initialize(userDataPath: string) {
-        console.log('Initializing Configuration');
+        LogService.log('Initializing ConfigurationService');
 
         try {
-            const configFileFullPath = `${userDataPath}\\${Configuration.configFileName}`
-            const configFileCurrentDirectory = `${Configuration.configFileName}`
+            const configFileFullPath = `${userDataPath}\\${ConfigurationService.configFileName}`
+            const configFileCurrentDirectory = `${ConfigurationService.configFileName}`
 
             // Load config file only if it exists
             if (fs.existsSync(configFileFullPath)) {
-                console.log(`Found config.json at: ${configFileFullPath}`)
+                LogService.log(`Found config.json at: ${configFileFullPath}`)
                 let config = JSON.parse(fs.readFileSync(configFileFullPath).toString());
                 this.twitchBotUsername = config.twitchBotUsername;
                 this.twitchBotToken = config.twitchBotToken;
                 this.twitchChannelName = config.twitchChannelName;
             } else if (fs.existsSync(configFileCurrentDirectory)) {
-                console.log(`Found config.json at: ${configFileCurrentDirectory}`)
+                LogService.log(`Found config.json at: ${configFileCurrentDirectory}`)
                 let config = JSON.parse(fs.readFileSync(configFileCurrentDirectory).toString());
                 this.twitchBotUsername = config.twitchBotUsername;
                 this.twitchBotToken = config.twitchBotToken;
                 this.twitchChannelName = config.twitchChannelName;
             } else {
-                console.log(`configFileFullPath: ${configFileFullPath}`)
-                console.log(`configFileCurrentDirectory: ${configFileCurrentDirectory}`)
-                console.log("Cannot find config.json!")
+                LogService.log(`configFileFullPath: ${configFileFullPath}`)
+                LogService.log(`configFileCurrentDirectory: ${configFileCurrentDirectory}`)
+                LogService.log("Cannot find config.json!")
             }
 
-            console.log(`twitchBotUsername: ${this.twitchBotUsername}`)
-            console.log(`twitchBotToken: ${this.twitchBotToken}`)
-            console.log(`twitchChannelName: ${this.twitchChannelName}`)
+            LogService.log(`twitchBotUsername: ${this.twitchBotUsername}`)
+            LogService.log(`twitchBotToken: ${this.twitchBotToken}`)
+            LogService.log(`twitchChannelName: ${this.twitchChannelName}`)
         } catch {
             console.error("Exception initalizing configuration!")
         }
     }
 
-    public static getInstance(): Configuration {
-        if (!Configuration.instance) {
-            Configuration.instance = new Configuration();
+    public static getInstance(): ConfigurationService {
+        if (!ConfigurationService.instance) {
+            ConfigurationService.instance = new ConfigurationService();
         }
-        return Configuration.instance;
+        return ConfigurationService.instance;
     }
 
     public getTwitchBotUsername() {
@@ -65,4 +66,4 @@ class Configuration {
     }
 }
 
-export default Configuration.getInstance();
+export default ConfigurationService.getInstance();

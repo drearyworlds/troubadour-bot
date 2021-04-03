@@ -8,13 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<script>
+    require('electron').ipcRenderer.on('log', (event, message) => {
+        document.getElementById("log").insertAdjacentHTML('beforeend', `${message}<br>`);
+    })
+</script>
 
 <body>
-<<<<<<< HEAD
     Is this Troubadour Bot?
-=======
-    Is this Troubadour Server?
->>>>>>> 118b91c28bd31f1772c05913428dc26f7e838b73
+    <div id="log">
+        log:
+    </div>
 </body>
 
 </html>

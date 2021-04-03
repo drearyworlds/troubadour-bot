@@ -1,6 +1,7 @@
 import tmi from "tmi.js"
-import { Constants } from "./config/Constants"
-import Configuration from "./config/Configuration"
+import { Constants } from "./config/constants"
+import Configuration from "./config/configuration-service"
+import LogService from "./logging/log-service"
 
 export class SanchezBot {
     // The client that connects to Twitch
@@ -12,11 +13,11 @@ export class SanchezBot {
     static sanchezCommandMessages: Array<string> = new Array<string>();
 
     constructor() {
-        console.log("constructor")
+        LogService.log("constructor")
     }
 
     static calculateStreamType() {
-        console.log("calculateStreamType")
+        LogService.log("calculateStreamType")
 
         const dayOfWeek = new Date().getDay();
 
@@ -31,7 +32,7 @@ export class SanchezBot {
     }
 
     static getCommandList() {
-        console.log("getCommandList")
+        LogService.log("getCommandList")
 
         let commandList: string = "";
         let firstCommand: boolean = true;
@@ -43,7 +44,7 @@ export class SanchezBot {
                 commandList += ", ";
             }
 
-            console.log(`Adding ${command} to commandList`)
+            LogService.log(`Adding ${command} to commandList`)
             commandList += command;
         });
 
@@ -54,16 +55,16 @@ export class SanchezBot {
                 commandList += ", ";
             }
 
-            console.log(`Adding ${command} to commandList`)
+            LogService.log(`Adding ${command} to commandList`)
             commandList += command;
         });
 
-        console.log(`Returning: ${commandList} `)
+        LogService.log(`Returning: ${commandList} `)
         return commandList;
     }
 
     static initializeMessages() {
-        console.log("initializeMessages")
+        LogService.log("initializeMessages")
 
         SanchezBot.predefinedCommands.set("!juliette", "Mi hermana. She will sit sometimes. Or sing sometimes. Or pick me up when I am sleeping.");
         SanchezBot.predefinedCommands.set("!megan", "@meganeggncheese is Mami. She is a good mod, like I am a good boy. Gracias for supporting Papi and his stream.");
@@ -101,7 +102,7 @@ export class SanchezBot {
     }
 
     initialize() {
-        console.log("initialize")
+        LogService.log("initialize")
 
         SanchezBot.calculateStreamType();
         SanchezBot.initializeMessages();
@@ -117,11 +118,11 @@ export class SanchezBot {
             ]
         };
 
-        console.log("****************************************")
-        console.log(Configuration.getTwitchBotUsername())
-        console.log(Configuration.getTwitchBotToken())
-        console.log(Configuration.getTwitchChannelName())
-        console.log("****************************************")
+        LogService.log("****************************************")
+        LogService.log(Configuration.getTwitchBotUsername())
+        LogService.log(Configuration.getTwitchBotToken())
+        LogService.log(Configuration.getTwitchChannelName())
+        LogService.log("****************************************")
 
         // Create a client with our options
         SanchezBot.client = new tmi.client(opts);
@@ -140,11 +141,11 @@ export class SanchezBot {
 
     // Called every time the bot connects to Twitch chat
     static onConnectedHandler(addr, port) {
-        console.log(`Connected to ${addr}: ${port} `);
+        LogService.log(`Connected to ${addr}: ${port} `);
     }
 
     static executePredefinedCommand(commandName: string) {
-        console.log(`executePredefinedCommand ${commandName}`)
+        LogService.log(`executePredefinedCommand ${commandName}`)
 
         try {
             let commandText: string = `${SanchezBot.predefinedCommands.get(commandName)} I am Sanchez.`
@@ -158,7 +159,7 @@ export class SanchezBot {
     }
 
     static executeCalculatedCommand(commandName: string) {
-        console.log("executeCalculatedCommand")
+        LogService.log("executeCalculatedCommand")
 
         try {
             if (commandName == "!dice") {
@@ -175,7 +176,7 @@ export class SanchezBot {
     }
 
     static handleCommand(target: string, commandName: string) {
-        console.log(`handleCommand: ${commandName} `)
+        LogService.log(`handleCommand: ${commandName} `)
 
         let executed: boolean = false;
 
@@ -198,11 +199,11 @@ export class SanchezBot {
             let executed = false;
 
             if (commandName.startsWith("!")) {
-                console.log("commandName startsWith !");
+                LogService.log("commandName startsWith !");
                 executed = SanchezBot.handleCommand(target, commandName);
 
                 if (executed) {
-                    console.log(`Executed ${commandName} command`);
+                    LogService.log(`Executed ${commandName} command`);
                 } else {
                     console.error(`Failed to execute ${commandName} command`)
                 }
@@ -214,13 +215,13 @@ export class SanchezBot {
 
     // Function called when the "dice" command is issued
     static rollDie(sides) {
-        console.log("rollDie");
+        LogService.log("rollDie");
 
         return Math.floor(Math.random() * sides) + 1;
     }
 
     static getDiceCommand() {
-        console.log("getDiceCommand");
+        LogService.log("getDiceCommand");
 
         const die1 = SanchezBot.rollDie(6);
         const die2 = SanchezBot.rollDie(6);
@@ -229,12 +230,12 @@ export class SanchezBot {
 
     static getSanchezCommand() {
         let randomIndex = Math.floor((Math.random() * SanchezBot.sanchezCommandMessages.length));
-        console.log(`Random index: ${randomIndex}`)
+        LogService.log(`Random index: ${randomIndex}`)
         return SanchezBot.sanchezCommandMessages[randomIndex];
     }
 
     static setUpCommonIntervalCommands() {
-        console.log("setUpCommonIntervalCommands")
+        LogService.log("setUpCommonIntervalCommands")
 
         setInterval(() => {
             SanchezBot.executeCalculatedCommand("!sanchez")
@@ -246,7 +247,7 @@ export class SanchezBot {
     }
 
     static setUpGameStreamIntervalCommands() {
-        console.log("setUpGameStreamIntervalCommands")
+        LogService.log("setUpGameStreamIntervalCommands")
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!minecraft")
@@ -254,7 +255,8 @@ export class SanchezBot {
     }
 
     static setUpMusicStreamIntervalCommands() {
-        console.log("setUpMusicStreamIntervalCommands")
+        
+        LogService.log("setUpMusicStreamIntervalCommands")
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!songrequest")

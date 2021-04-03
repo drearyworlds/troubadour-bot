@@ -1,5 +1,5 @@
 import { TroubadourBot } from './troubadour-bot'
-import Configuration from './config/Configuration'
+import Configuration from './config/configuration-service'
 
 Configuration.initialize(`.`)
 

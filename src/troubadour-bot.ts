@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Constants } from "./config/Constants";
+import { Constants } from "./config/constants";
 import { SanchezBot } from "./sanchezbot";
 
 export class TroubadourBot {
