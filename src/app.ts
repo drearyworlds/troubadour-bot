@@ -3,6 +3,6 @@ import Configuration from './config/Configuration'
 
 Configuration.initialize(`.`)
 
-// Start the Troubadour server
-let server : TroubadourBot = new TroubadourBot()
-server.Run()
+// Start the Troubadour bot
+let bot : TroubadourBot = new TroubadourBot()
+bot.Run()

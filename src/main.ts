@@ -33,6 +33,6 @@ function createWindow() {
 console.log(`Userdata path: ${app.getPath(`userData`)}`)
 Configuration.initialize(app.getPath(`userData`))
 
-// Start the Troubadour server
+// Start the Troubadour bot
 let bot : TroubadourBot = new TroubadourBot()
 bot.Run()

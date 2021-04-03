@@ -75,7 +75,7 @@ export class SanchezBot {
         if (SanchezBot.musicStream) {
             SanchezBot.predefinedCommands.set("!songrequest", `To request a song, you will type "!sr song title", like "!sr Calle Ocho", or go to this link to browse the list, yes: https://www.streamersonglist.com/t/drearyworlds/songs.`);
         } else {
-            SanchezBot.predefinedCommands.set("!minecraft", "To play along on Drearyland, join the Other Dreary Worlds Discord server! https://discord.gg/afmvH6W. Choose the games role in the #get-roles channel, then head to the #how-to-join channel for rules and instructions!");
+            SanchezBot.predefinedCommands.set("!minecraft", "To play along on Drearyland, join the Other Dreary Worlds Discord bot! https://discord.gg/afmvH6W. Choose the games role in the #get-roles channel, then head to the #how-to-join channel for rules and instructions!");
         }
 
         SanchezBot.calculatedCommands.push("!dice")
