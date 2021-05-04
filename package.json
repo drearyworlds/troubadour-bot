@@ -1,20 +1,20 @@
 {
   "name": "troubadour-bot",
   "description": "Troubadour Bot",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "drearyworlds",
   "main": "dist/main.js",
   "scripts": {
     "clean": "rd /s /q .\\dist && rd /s /q .\\bin",
-    "build": "yarn run build && yarn run copyHtml",
+    "build": "yarn run build-cli && yarn run copyHtml",
     "build-cli": "tsc",
     "rebuild": "yarn run clean && yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copyHtml": "copy .\\src\\index.html .\\dist\\",
-    "start": "yarn run build-electron && electron .",
+    "start": "yarn run build && electron .",
     "start-cli": "yarn run build && node dist/app.js",
     "pack": "electron-builder --dir",
-    "dist": "yarn run build-electron && electron-builder",
+    "dist": "yarn run build && electron-builder",
     "publish": "electron-builder --win --x64 --publish always"
   },
   "build": {
