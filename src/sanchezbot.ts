@@ -97,8 +97,14 @@ export class SanchezBot {
         SanchezBot.sanchezCommandMessages.push("I like to play with my squeaky carrot sometimes. I will not play unless I want to.");
         SanchezBot.sanchezCommandMessages.push("Is it 5:30 yet? 5:30 is dinner time.")
         SanchezBot.sanchezCommandMessages.push("Was that the doorbell?! I will protect you! *bark!* *bark!* *bark!*")
-        SanchezBot.sanchezCommandMessages.push("Stop waking me up with this music, papi.. I am taking a siesta.")
-
+        SanchezBot.sanchezCommandMessages.push("Stop waking me up with this music, Papi.. I am taking a siesta.")
+        SanchezBot.sanchezCommandMessages.push("You will ask me to tell a joke. You will type !joke to do this.")
+        SanchezBot.sanchezCommandMessages.push("I am a buds.");
+        SanchezBot.sanchezCommandMessages.push("I am a good boy.");
+        SanchezBot.sanchezCommandMessages.push("Chihuahua home to Las Barrancas del Cobre, a canyon system bigger than the Grand Canyon, yeeess...");
+        SanchezBot.sanchezCommandMessages.push("I am glad my hearing is going. I don't have to hear Papi's music so loud anymore.");
+        SanchezBot.sanchezCommandMessages.push("Chihuahua City is the capital of Chihuahua, Mexico. This is where I am from, yes?");
+        SanchezBot.sanchezCommandMessages.push("Chihuahua has been inhabited since 12,000 BCE, yes. This is very old. I am very old, too.");
     }
 
     initialize() {
