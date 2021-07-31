@@ -101,7 +101,7 @@ export class SanchezBot {
         SanchezBot.sanchezCommandMessages.push("You will ask me to tell a joke. You will type !joke to do this.")
         SanchezBot.sanchezCommandMessages.push("I am a buds.");
         SanchezBot.sanchezCommandMessages.push("I am a good boy.");
-        SanchezBot.sanchezCommandMessages.push("Chihuahua home to Las Barrancas del Cobre, a canyon system bigger than the Grand Canyon, yeeess...");
+        SanchezBot.sanchezCommandMessages.push("Chihuahua is home to Las Barrancas del Cobre, a canyon system bigger than the Grand Canyon, yeeess...");
         SanchezBot.sanchezCommandMessages.push("I am glad my hearing is going. I don't have to hear Papi's music so loud anymore.");
         SanchezBot.sanchezCommandMessages.push("Chihuahua City is the capital of Chihuahua, Mexico. This is where I am from, yes?");
         SanchezBot.sanchezCommandMessages.push("Chihuahua has been inhabited since 12,000 BCE, yes. This is very old. I am very old, too.");
