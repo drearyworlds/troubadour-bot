@@ -68,14 +68,16 @@ export class SanchezBot {
 
         SanchezBot.predefinedCommands.set("!juliette", "Mi hermana. She will sit sometimes. Or sing sometimes. Or pick me up when I am sleeping.");
         SanchezBot.predefinedCommands.set("!megan", "@meganeggncheese is Mami. She is a good mod, like I am a good boy. Gracias for supporting Papi and his stream.");
-        SanchezBot.predefinedCommands.set("!discord", "Join the Dreary Worlds Discord to connect outside of stream. You can suggest songs, games, and drinks, view pictures of me and maybe other puppers, too. https://discord.gg/afmvH6W.");
+        SanchezBot.predefinedCommands.set("!discord", "Join the Dreary Worlds Discord server to connect outside of stream, chat, and suggest songs! https://discord.gg/afmvH6W");
         SanchezBot.predefinedCommands.set("!clap", "👏 *CLAP* 👏 *CLAP* 👏 *CLAP* 👏 *CLAP* 👏 *CLAP* 👏")
         SanchezBot.predefinedCommands.set("!lurk", "You will enjoy your lurk, yes.")
         SanchezBot.predefinedCommands.set("!joke", "I only know one joke: What do you call a big burrito? A burr! Hahaha! This is very funny!")
 
         if (SanchezBot.musicStream) {
-            SanchezBot.predefinedCommands.set("!songrequest", `To request a song, you will type "!sr song title", like "!sr Calle Ocho", or go to this link to browse the list, yes: https://www.streamersonglist.com/t/drearyworlds/songs `);
-            SanchezBot.predefinedCommands.set("!togetherwherever", `Saturday, October 30th, Dreary will be playing the Together Wherever Music Fest at 9pm CST! Tune in all day to follow all the streamers. Click here for more info: https://www.instagram.com/togetherwherevermusic/ `);
+            SanchezBot.predefinedCommands.set("!songrequest", `If you are enjoying the stream, click the heart icon to follow and be notified when I go live!`);
+            SanchezBot.predefinedCommands.set("!songrequest", `To request a song, you will type "!sr song title", or go to this link to browse the list, yes: https://www.streamersonglist.com/t/drearyworlds/songs `);
+            SanchezBot.predefinedCommands.set("!togetherwherever", `Follow @togetherwherevermusic on Instagram at https://instagram.com/togetherwherevermusic to keep up with future events!`);
+            SanchezBot.predefinedCommands.set("!tw", `Follow @togetherwherevermusic on Instagram at https://instagram.com/togetherwherevermusic to keep up with future events!`);
         } else {
             SanchezBot.predefinedCommands.set("!minecraft", "To play along on Drearyland, join the Other Dreary Worlds Discord bot! https://discord.gg/afmvH6W. Choose the games role in the #get-roles channel, then head to the #how-to-join channel for rules and instructions!");
         }
@@ -87,23 +89,23 @@ export class SanchezBot {
         SanchezBot.predefinedCommands.set("!commands", `Here are the commands you will give to me: ${commandList}. `);
 
         // Random Sanchez thoughts
-        SanchezBot.sanchezCommandMessages.push("Zzzzzzzzzzzzzz....  burritos.....zzz.. tacos..... you will do this for me..... zzzz...");
-        SanchezBot.sanchezCommandMessages.push("I like tacos and burritos. You will make me some. You will do this for me.");
+        //SanchezBot.sanchezCommandMessages.push("Zzzzzzzzzzzzzz....  burritos.....zzz.. tacos..... you will do this for me..... zzzz...");
+        //SanchezBot.sanchezCommandMessages.push("I like tacos and burritos. You will make me some. You will do this for me.");
         SanchezBot.sanchezCommandMessages.push("I am Sanchez.");
-        SanchezBot.sanchezCommandMessages.push("I am truly The Chosen Sanchez.");
-        SanchezBot.sanchezCommandMessages.push("You will follow my papi, Dreary.. You will press the heart icon to do this, yes.");
-        SanchezBot.sanchezCommandMessages.push("I like to play with my squeaky carrot sometimes. I will not play unless I want to.");
-        SanchezBot.sanchezCommandMessages.push("Is it 5:30 yet? 5:30 is dinner time.")
-        SanchezBot.sanchezCommandMessages.push("Was that the doorbell?! I will protect you! *bark!* *bark!* *bark!*")
-        SanchezBot.sanchezCommandMessages.push("Stop waking me up with this music, Papi.. I am taking a siesta.")
-        SanchezBot.sanchezCommandMessages.push("You will ask me to tell a joke. You will type !joke to do this.")
-        SanchezBot.sanchezCommandMessages.push("I am a buds.");
-        SanchezBot.sanchezCommandMessages.push("I am a good boy.");
-        SanchezBot.sanchezCommandMessages.push("Chihuahua is home to Las Barrancas del Cobre, a canyon system bigger than the Grand Canyon, yeeess...");
-        SanchezBot.sanchezCommandMessages.push("I am glad my hearing is going. I don't have to hear Papi's music so loud anymore...");
-        SanchezBot.sanchezCommandMessages.push("Chihuahua City is the capital of Chihuahua, Mexico. This is where I am from, yes?");
-        SanchezBot.sanchezCommandMessages.push("Chihuahua has been inhabited since 12,000 BCE, yes. This is very old. I am very old, too.");
-        SanchezBot.sanchezCommandMessages.push("I do not like having this cone on. How much longer must I wear it?");
+        //SanchezBot.sanchezCommandMessages.push("I am truly The Chosen Sanchez.");
+        //SanchezBot.sanchezCommandMessages.push("You will follow my papi, Dreary.. You will press the heart icon to do this, yes.");
+        //SanchezBot.sanchezCommandMessages.push("I like to play with my squeaky carrot sometimes. I will not play unless I want to.");
+        //SanchezBot.sanchezCommandMessages.push("Is it 5:30 yet? 5:30 is dinner time.")
+        //SanchezBot.sanchezCommandMessages.push("Was that the doorbell?! I will protect you! *bark!* *bark!* *bark!*")
+        //SanchezBot.sanchezCommandMessages.push("Stop waking me up with this music, Papi.. I am taking a siesta.")
+        //SanchezBot.sanchezCommandMessages.push("You will ask me to tell a joke. You will type !joke to do this.")
+        //SanchezBot.sanchezCommandMessages.push("I am a buds.");
+        //SanchezBot.sanchezCommandMessages.push("I am a good boy.");
+        //SanchezBot.sanchezCommandMessages.push("Chihuahua is home to Las Barrancas del Cobre, a canyon system bigger than the Grand Canyon, yeeess...");
+        //SanchezBot.sanchezCommandMessages.push("I am glad my hearing is going. I don't have to hear Papi's music so loud anymore...");
+        //SanchezBot.sanchezCommandMessages.push("Chihuahua City is the capital of Chihuahua, Mexico. This is where I am from, yes?");
+        //SanchezBot.sanchezCommandMessages.push("Chihuahua has been inhabited since 12,000 BCE, yes. This is very old. I am very old, too.");
+        //SanchezBot.sanchezCommandMessages.push("I do not like having this cone on. How much longer must I wear it?");
     }
 
     initialize() {
@@ -242,17 +244,17 @@ export class SanchezBot {
     static setUpCommonIntervalCommands() {
         LogService.log("setUpCommonIntervalCommands")
 
-        setInterval(() => {
-            SanchezBot.executeCalculatedCommand("!sanchez")
-        }, Constants.ONE_HOUR_IN_MS)
+        // setInterval(() => {
+        //     SanchezBot.executeCalculatedCommand("!sanchez")
+        // }, Constants.ONE_HOUR_IN_MS)
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!discord")
-        }, Constants.FORTY_FIVE_MINUTES_IN_MS)
+        }, Constants._25_MINUTES_IN_MS)
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!togetherwherever")
-        }, Constants.THIRTY_ONE_MINUTES_IN_MS)        
+        }, Constants._35_MINUTES_IN_MS)        
     }
 
     static setUpGameStreamIntervalCommands() {
@@ -260,7 +262,7 @@ export class SanchezBot {
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!minecraft")
-        }, Constants.TWENTY_NINE_MINUTES_IN_MS)
+        }, Constants._29_MINUTES_IN_MS)
     }
 
     static setUpMusicStreamIntervalCommands() {
@@ -269,6 +271,6 @@ export class SanchezBot {
 
         setInterval(() => {
             SanchezBot.executePredefinedCommand("!songrequest")
-        }, Constants.TWENTY_NINE_MINUTES_IN_MS)
+        }, Constants._45_MINUTES_IN_MS)
     }
 }
