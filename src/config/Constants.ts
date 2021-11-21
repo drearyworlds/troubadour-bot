@@ -1,4 +1,4 @@
-Dexport class Constants {
+export class Constants {
     static _25_MINUTES_IN_MS = 1500000;
     static _30_MINUTES_IN_MS = 1800000;
     static _31_MINUTES_IN_MS = 1860000
